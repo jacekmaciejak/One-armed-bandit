@@ -5,6 +5,9 @@ class Game {
     document
       .getElementById("start")
       .addEventListener("click", this.startGame.bind(this));
+    document
+      .getElementById("reset")
+      .addEventListener("click", this.resetGame.bind(this));
     this.spanWallet = document.querySelector(".panel span.wallet");
     this.boards = [...document.querySelectorAll("div.color")];
     this.inputBid = document.getElementById("bid");
@@ -36,7 +39,6 @@ class Game {
     this.spanGames.textContent = stats[0];
     this.spanWins.textContent = stats[1];
     this.spanLosses.textContent = stats[2];
-    // this.inputBid.value = "";
   }
   startGame() {
     if (this.inputBid.value < 1)
@@ -62,5 +64,13 @@ class Game {
       bid,
       wonMoney
     );
+  }
+  resetGame() {
+    this.inputBid.value = "";
+    this.spanWallet.textContent = "0";
+    this.spanResult.textContent = "";
+    this.spanGames.textContent = "0";
+    this.spanWins.textContent = "0";
+    this.spanLosses.textContent = "0";
   }
 }
