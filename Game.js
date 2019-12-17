@@ -66,6 +66,8 @@ class Game {
     );
   }
   resetGame() {
+    const colors = ["gray", "gray", "gray"];
+    this.render(colors);
     this.inputBid.value = "";
     this.spanWallet.textContent = "0";
     this.spanResult.textContent = "";
